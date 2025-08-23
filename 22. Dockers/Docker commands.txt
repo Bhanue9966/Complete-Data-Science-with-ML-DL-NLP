@@ -1,0 +1,40 @@
+🐳 Docker Basics: Command Reference
+
+# 🔧 Setup & Configuration
+docker --version          # Check installed Docker version
+docker info               # Display system-wide Docker information
+
+
+# 🚀 Running Containers
+docker run <image_name>                      # Run a container from image
+docker run -it <image_name> bash             # Run interactively with shell access
+docker run -d <image_name>                   # Run in detached mode (background)
+docker run -p <host_port>:<container_port> <image_name>  # Map ports
+docker run --name <container_name> <image_name>          # Assign a name to container
+
+
+# 📋 Managing Containers
+docker ps                                    # List running containers
+docker ps -a                                 # List all containers (including stopped)
+docker stop <container_id_or_name>           # Stop a running container
+docker start <container_id_or_name>          # Start a stopped container
+docker restart <container_id_or_name>        # Restart a container
+docker rm <container_id_or_name>             # Remove a container
+
+
+🧠 Container Insights
+docker logs <container_id_or_name>           # View container logs
+docker exec -it <container_id_or_name> bash  # Access running container shell
+docker inspect <container_id_or_name>        # Detailed container info (JSON format)
+
+
+📁 Volumes & Persistence
+docker volume create <volume_name>           # Create a volume
+docker volume ls                             # List volumes
+docker run -v <volume_name>:<container_path> <image_name>  # Mount volume
+
+
+🧹 Cleanup
+docker system prune                          # Remove unused data (images, containers, volumes)
+docker image prune                           # Remove unused images
+docker container prune                       # Remove stopped containers
